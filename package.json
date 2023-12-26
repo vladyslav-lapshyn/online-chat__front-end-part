@@ -8,7 +8,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -32,6 +35,7 @@
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
     "sass": "^1.69.5",
+    "stylelint": "^16.1.0",
     "stylelint-config-recommended-scss": "^14.0.0",
     "stylelint-scss": "^6.0.0",
     "typescript": "^5.2.2",
